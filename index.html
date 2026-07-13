@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    position:sticky;
+    top:0;
+    background:rgba(0,0,0,.3);
+    backdrop-filter:blur(10px);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero p{
+    margin:20px 0;
+    color:#cbd5e1;
+    max-width:700px;
+}
+
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:60px 10%;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#020617;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h2>DemoSite</h2>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Features</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<h1>Welcome to DemoSite 🚀</h1>
+
+<p>
+This is a responsive demo website built using only HTML and CSS.
+It works on desktop, tablet, and mobile devices.
+</p>
+
+<button onclick="showMessage()">Get Started</button>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+<h2>Fast</h2>
+<p>Loads instantly with lightweight code.</p>
+</div>
+
+<div class="card">
+<h2>Responsive</h2>
+<p>Looks great on phones, tablets, and laptops.</p>
+</div>
+
+<div class="card">
+<h2>Modern</h2>
+<p>Simple, clean, and attractive design.</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 DemoSite | Made with ❤️
+</footer>
+
+<script>
+function showMessage(){
+    alert("Thanks for visiting the demo website!");
+}
+</script>
+
+</body>
+</html>
