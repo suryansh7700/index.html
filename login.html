@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | RiseUp</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+}
+
+.login-box{
+
+    width:400px;
+    max-width:90%;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+
+    padding:40px;
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+
+}
+
+.login-box h1{
+
+    text-align:center;
+    margin-bottom:30px;
+    color:#38bdf8;
+
+}
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+.input-group label{
+
+    display:block;
+    margin-bottom:8px;
+
+}
+
+.input-group input{
+
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#f1f5f9;
+    font-size:16px;
+
+}
+
+button{
+
+    width:100%;
+    padding:14px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#38bdf8;
+    color:white;
+
+    font-size:18px;
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.02);
+
+}
+
+#error{
+
+    color:#ff8080;
+    text-align:center;
+    margin-top:15px;
+
+}
+
+p{
+
+    margin-top:20px;
+    text-align:center;
+
+}
+
+a{
+
+    color:#38bdf8;
+    text-decoration:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h1>Welcome Back 👋</h1>
+
+<div class="input-group">
+
+<label>Username</label>
+
+<input
+type="text"
+id="username"
+placeholder="Enter username">
+
+</div>
+
+
+<div class="input-group">
+
+<label>Password</label>
+
+<input
+type="password"
+id="password"
+placeholder="Enter password">
+
+</div>
+
+<button onclick="login()">
+
+Login
+
+</button>
+
+<p id="error"></p>
+
+<p>
+
+Don't have an account?
+
+<a href="signup.html">
+
+Create One
+
+</a>
+
+</p>
+
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+
+</html>
