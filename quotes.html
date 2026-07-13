@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Motivational Quotes | RiseUp</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    background:#0f172a;
+    color:white;
+    font-family:Poppins,sans-serif;
+}
+
+header{
+    position:sticky;
+    top:0;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:120px auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+#search{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    margin-bottom:30px;
+    font-size:18px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.quote-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+.quote-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.quote-card p{
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+.author{
+
+    color:#38bdf8;
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
+
+.buttons{
+
+    margin-top:20px;
+
+}
+
+button{
+
+    padding:10px 18px;
+
+    border:none;
+
+    background:#38bdf8;
+
+    color:white;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    margin-right:10px;
+
+}
+
+button:hover{
+
+    opacity:.9;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+RiseUp
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="roadmap.html">Roadmaps</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1>100+ Motivational Quotes</h1>
+
+<input
+type="text"
+id="search"
+placeholder="Search quotes..."
+onkeyup="searchQuotes()">
+
+<div class="grid" id="quoteContainer">
+
+</div>
+
+</div>
+
+<script>
+
+const quotes=[
+
+{
+text:"The future depends on what you do today.",
+author:"Mahatma Gandhi"
+},
+
+{
+text:"Success is the sum of small efforts repeated daily.",
+author:"Robert Collier"
+},
+
+{
+text:"Dream big and dare to fail.",
+author:"Norman Vaughan"
+},
+
+{
+text:"Discipline beats motivation.",
+author:"RiseUp"
+},
+
+{
+text:"Push yourself because no one else will do it for you.",
+author:"Unknown"
+},
+
+{
+text:"Don't stop until you're proud.",
+author:"Unknown"
+},
+
+{
+text:"Believe you can and you're halfway there.",
+author:"Theodore Roosevelt"
+},
+
+{
+text:"Your only limit is your mind.",
+author:"Unknown"
+},
+
+{
+text:"Stay hungry. Stay foolish.",
+author:"Steve Jobs"
+},
+
+{
+text:"Action is the foundational key to success.",
+author:"Pablo Picasso"
+}
+
+];
+
+const container=document.getElementById("quoteContainer");
+
+function displayQuotes(list){
+
+container.innerHTML="";
+
+list.forEach(q=>{
+
+container.innerHTML+=`
+
+<div class="quote-card">
+
+<p>"${q.text}"</p>
+
+<div class="author">
+
+- ${q.author}
+
+</div>
+
+<div class="buttons">
+
+<button onclick="copyQuote('${q.text}')">
+
+Copy
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+displayQuotes(quotes);
+
+function searchQuotes(){
+
+const value=document.getElementById("search").value.toLowerCase();
+
+const filtered=quotes.filter(q=>
+
+q.text.toLowerCase().includes(value) ||
+
+q.author.toLowerCase().includes(value)
+
+);
+
+displayQuotes(filtered);
+
+}
+
+function copyQuote(text){
+
+navigator.clipboard.writeText(text);
+
+alert("Quote copied!");
+
+}
+
+</script>
+
+</body>
+</html>
