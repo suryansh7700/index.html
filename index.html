@@ -1,155 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demo Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiseUp | Motivation Every Day</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
-}
+    <link rel="stylesheet" href="style.css">
 
-body{
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    color:white;
-}
-
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 10%;
-    position:sticky;
-    top:0;
-    background:rgba(0,0,0,.3);
-    backdrop-filter:blur(10px);
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-}
-
-.hero{
-    min-height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
-
-.hero h1{
-    font-size:55px;
-}
-
-.hero p{
-    margin:20px 0;
-    color:#cbd5e1;
-    max-width:700px;
-}
-
-button{
-    padding:15px 35px;
-    border:none;
-    border-radius:30px;
-    background:#38bdf8;
-    color:white;
-    cursor:pointer;
-    font-size:18px;
-    transition:.3s;
-}
-
-button:hover{
-    transform:scale(1.08);
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    padding:60px 10%;
-}
-
-.card{
-    background:#1e293b;
-    padding:30px;
-    border-radius:15px;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    background:#020617;
-}
-</style>
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <header>
-<h2>DemoSite</h2>
+
+<div class="logo">
+    RiseUp
+</div>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Features</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#quotes">Quotes</a>
+<a href="#roadmaps">Roadmaps</a>
+<a href="login.html" class="login-btn">Login</a>
+
 </nav>
+
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
+
 </header>
 
-<section class="hero">
+<div id="mobileMenu" class="mobile-menu">
 
-<h1>Welcome to DemoSite 🚀</h1>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#quotes">Quotes</a>
+<a href="#roadmaps">Roadmaps</a>
+<a href="login.html">Login</a>
+
+</div>
+
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Become The Best Version Of Yourself</h1>
 
 <p>
-This is a responsive demo website built using only HTML and CSS.
-It works on desktop, tablet, and mobile devices.
+Success doesn't happen overnight.
+Build discipline, stay consistent,
+and become unstoppable.
 </p>
 
-<button onclick="showMessage()">Get Started</button>
+<a href="signup.html" class="hero-btn">
+Start Your Journey
+</a>
 
-</section>
-
-<section class="cards">
-
-<div class="card">
-<h2>Fast</h2>
-<p>Loads instantly with lightweight code.</p>
-</div>
-
-<div class="card">
-<h2>Responsive</h2>
-<p>Looks great on phones, tablets, and laptops.</p>
-</div>
-
-<div class="card">
-<h2>Modern</h2>
-<p>Simple, clean, and attractive design.</p>
 </div>
 
 </section>
+
+
+<section class="stats">
+
+<div class="stat-card">
+<h2>100+</h2>
+<p>Motivational Quotes</p>
+</div>
+
+<div class="stat-card">
+<h2>6</h2>
+<p>Career Roadmaps</p>
+</div>
+
+<div class="stat-card">
+<h2>100%</h2>
+<p>Free Forever</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Stay Motivated</p>
+</div>
+
+</section>
+
+
+
+<section id="features">
+
+<h2 class="section-title">
+Why Choose RiseUp?
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>💬 Daily Quotes</h3>
+
+<p>
+Read inspiring quotes every day and keep your mindset positive.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎯 Daily Goals</h3>
+
+<p>
+Track your daily habits and improve one step at a time.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🚀 Career Roadmaps</h3>
+
+<p>
+Learn AI, Web Development, Data Science, Cyber Security and more.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🏆 Stay Consistent</h3>
+
+<p>
+Build habits that successful people follow every single day.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="quotes">
+
+<h2 class="section-title">
+
+Quote of the Day
+
+</h2>
+
+<div class="quote-box">
+
+<p id="quote">
+
+"The future depends on what you do today."
+
+</p>
+
+<span id="author">
+
+— Mahatma Gandhi
+
+</span>
+
+<br><br>
+
+<button onclick="newQuote()">
+
+New Quote
+
+</button>
+
+</div>
+
+</section>
+
+
+
+
+<section id="roadmaps">
+
+<h2 class="section-title">
+
+Popular Career Roadmaps
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🤖 AI & Machine Learning</h3>
+
+<p>
+
+Python → NumPy → Pandas → ML → Deep Learning → Projects
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌐 Web Development</h3>
+
+<p>
+
+HTML → CSS → JavaScript → React → Node.js → MongoDB
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🔒 Cyber Security</h3>
+
+<p>
+
+Networking → Linux → Python → Ethical Hacking → Bug Bounty
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<section class="cta">
+
+<h2>
+
+Start Building Your Future Today
+
+</h2>
+
+<p>
+
+Small steps every day create massive results.
+
+</p>
+
+<a href="signup.html">
+
+<button>
+
+Join RiseUp
+
+</button>
+
+</a>
+
+</section>
+
+
 
 <footer>
-© 2026 DemoSite | Made with ❤️
+
+<h2>RiseUp</h2>
+
+<p>
+
+Dream Big • Work Hard • Stay Humble
+
+</p>
+
+<p>
+
+© 2026 RiseUp
+
+</p>
+
 </footer>
 
-<script>
-function showMessage(){
-    alert("Thanks for visiting the demo website!");
-}
-</script>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
