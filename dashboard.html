@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | RiseUp</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    background:#0f172a;
+    color:white;
+    font-family:'Poppins',sans-serif;
+}
+
+.dashboard{
+
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+
+}
+
+.top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+
+}
+
+.logout{
+
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+
+}
+
+.logout:hover{
+
+    opacity:.9;
+
+}
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+
+}
+
+.box{
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    padding:25px;
+    border-radius:20px;
+
+}
+
+.progress{
+
+    width:100%;
+    height:18px;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:20px;
+
+}
+
+.bar{
+
+    width:0%;
+    height:100%;
+    background:#38bdf8;
+    transition:.5s;
+
+}
+
+.check{
+
+    margin-top:15px;
+
+}
+
+.check label{
+
+    display:block;
+    margin:12px 0;
+
+}
+
+button{
+
+    background:#38bdf8;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+
+}
+
+.links a{
+
+    display:block;
+    margin:12px 0;
+    color:#38bdf8;
+    text-decoration:none;
+
+}
+
+.quote{
+
+    font-size:20px;
+    line-height:1.7;
+
+}
+
+</style>
+
+</head>
+
+<body onload="checkLogin();loadUser();loadDashboard();">
+
+<div class="dashboard">
+
+<div class="top">
+
+<div>
+
+<h1>
+
+Welcome,
+
+<span id="welcomeUser"></span>
+
+👋
+
+</h1>
+
+<p>Keep moving forward every single day.</p>
+
+</div>
+
+<button class="logout" onclick="logout()">
+
+Logout
+
+</button>
+
+</div>
+
+<div class="grid">
+
+<div class="box">
+
+<h2>Today's Motivation</h2>
+
+<p class="quote" id="dailyQuote">
+
+Discipline is doing what needs to be done even when you don't feel like doing it.
+
+</p>
+
+<br>
+
+<button onclick="changeQuote()">
+
+New Quote
+
+</button>
+
+</div>
+
+<div class="box">
+
+<h2>Daily Goals</h2>
+
+<div class="check">
+
+<label>
+
+<input type="checkbox">
+
+ Study 2 Hours
+
+</label>
+
+<label>
+
+<input type="checkbox">
+
+ Solve 2 DSA Problems
+
+</label>
+
+<label>
+
+<input type="checkbox">
+
+ Workout
+
+</label>
+
+<label>
+
+<input type="checkbox">
+
+ Read 20 Pages
+
+</label>
+
+</div>
+
+</div>
+
+<div class="box">
+
+<h2>Your Progress</h2>
+
+<div class="progress">
+
+<div class="bar" id="progressBar"></div>
+
+</div>
+
+<br>
+
+<button onclick="increaseProgress()">
+
+Increase Progress
+
+</button>
+
+</div>
+
+<div class="box">
+
+<h2>Quick Links</h2>
+
+<div class="links">
+
+<a href="roadmap.html">
+
+🚀 Career Roadmaps
+
+</a>
+
+<a href="quotes.html">
+
+💬 Motivational Quotes
+
+</a>
+
+<a href="success.html">
+
+🏆 Success Stories
+
+</a>
+
+<a href="contact.html">
+
+📞 Contact Us
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+
+</body>
+</html>
